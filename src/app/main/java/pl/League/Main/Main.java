@@ -14,7 +14,7 @@ import pl.League.models.Leagues;
 public class Main {
 
 	public static void main(String[] args) {
-/*
+
 		List<Club> clubs=ClubDao.findAll();
 		List<Country> countries=CountryDao.findAll();
 		for(Club club:clubs) {
@@ -24,12 +24,12 @@ public class Main {
 		for(Country count:countries) {
 			System.out.println(count.toString());
 		}
-	//	Leagues league=LeaguesDao.findByLeagueName("Ekstraklasa");
-		//System.out.println(league.toString());
-		//Club club=ClubDao.findByClubName("Legia Warszawa");
-		//System.out.println(club.toString());
-*/
-		//Player player=
+		Leagues league=LeaguesDao.findByLeagueName("Ekstraklasa");
+		System.out.println(league.toString());
+		Club club=ClubDao.findByClubName("Legia Warszawa");
+		System.out.println(club.toString());
+
+
 		PlayerDao.teamValue(1);
 
 
