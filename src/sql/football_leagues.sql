@@ -114,6 +114,12 @@ insert into country values (null,'Wenezuela');
 insert into country values (null,'Kamerun');
 insert into country values (null,'Ghana');
 insert into country values (null,'Nigeria');
+insert into country values (null,'Walia');
+insert into country values (null,'Maroko');
+insert into country values (null,'Macedonia');
+insert into country values (null,'Szkocja');
+insert into country values (null,'Japonia');
+insert into country values (null,'Wybrzeże Kości Słoniowej');
 #wykonane
 insert into leagues values (null,1,16,'Ekstraklasa');
 insert into leagues values (null,2,18,'Bundesliga');
@@ -925,3 +931,352 @@ insert into employees values(null,'Coach','Steffen','Baumgart','1972-01-05',34);
 select  SUM(market_value) from football_leagues.player where clubID=2;
 
 select SUM(market_value) from football_leagues.player AS club_value;
+
+select  * FROM club;
+#Liga hiszpańska piłkarze
+
+#Piłkarze FC Barcelona
+insert into player values (null,'Marc-André','Stegen','1992-04-30',35,2,'GK','right',72000000);
+insert into player values (null,'Clément','Lenglet','1995-06-17',35,8 ,'CB','right',48000000);
+insert into player values (null,'Samuel','Umtiti','1993-11-14',35, 8,'CB','left',32000000);
+insert into player values (null,'Jordi','Alba','1989-03-21',35, 3,'LB','left',40000000);
+insert into player values (null,'Sergi','Roberto','1992-02-07',35,3,'RB','right',40000000);
+insert into player values (null,'Sergio','Busquets','1988-11-16',35,8,'CDM','right',28000000);
+insert into player values (null,'Frenkie','de Jong','1997-05-12',35,18 ,'CM','right',72000000);
+insert into player values (null,'Antoine','Griezmann','1991-03-21',35, 8,'CAM','right',96000000);
+insert into player values (null,'Lionel','Messi','1987-06-24',35, 10,'RW','left',112000000);
+insert into player values (null,'Luis','Suárez','1987-01-24',35,21 ,'ST','right',28000000);
+insert into player values (null,'Ousmane','Dembélé','1997-05-15',35,8,'LW','right',56000000);
+
+#Pracownicy FC Barcelona
+insert into employees values(null,'President','Josep','Bartomeu','1963-02-06',35);
+insert into employees values(null,'Coach','Quique','Setién','1958-09-27',35);
+
+#Piłkarze Real Madryt
+insert into player values (null,'Thibaut','Courtois','1992-05-11',36,17 ,'GK','left',48000000);
+insert into player values (null,'Raphaël','Varane','1993-04-25',36,8 ,'CB','right',64000000);
+insert into player values (null,'Éder','Militão','1998-01-18',36,13 ,'CB','right',36000000);
+insert into player values (null,'Ferland','Mendy','1995-06-08',36,8 ,'LB','left',32000000);
+insert into player values (null,'Daniel','Carvajal','1992-01-11',36,3 ,'RB','right',40000000);
+insert into player values (null,'Carlos','Casemiro','1992-02-23',36,13 ,'CDM','right',64000000);
+insert into player values (null,'Federico','Valverde','1998-07-22',36,3 ,'CM','right',54000000);
+insert into player values (null,'Francisco','Isco','1992-04-21',36, 3,'CAM','right',40000000);
+insert into player values (null,'Eden','Hazard','1991-01-07',36, 17,'RW','right',80000000);
+insert into player values (null,'Gareth','Bale','1989-07-16',36,50 ,'LW','left',32000000);
+insert into player values (null,'Karim','Benzema','1987-12-19',36,8 ,'ST','right',32000000);
+
+#Pracownicy Real Madryt
+insert into employees values(null,'President','Florentino','Pérez','1947-03-08',36);
+insert into employees values(null,'Coach','Zinédine','Zidane','1972-06-23',36);
+
+#Piłkarze Sevilla FC
+insert into player values (null,'Tomáš','Vaclík','1989-03-29',37,5 ,'GK','right',15000000);
+insert into player values (null,'Diego','Carlos','1993-03-15',37,13,'CB','right',32000000);
+insert into player values (null,'Jules','Koundé','1998-11-12',37,8,'CB','right',22000000);
+insert into player values (null,'Sergio','Reguilón','1996-12-16',37,3,'LB','left',20000000);
+insert into player values (null,'Jesús','Navas','1985-11-21',37,3 ,'RB','right',3000000);
+insert into player values (null,'Fernando','Reges','1987-07-25',37,13 ,'CDM','right',8000000);
+insert into player values (null,'Joan','Jordán','1994-07-06',37,3 ,'CM','right',15000000);
+insert into player values (null,'Franco','Vázquez','1989-02-22',37, 10,'CAM','right',10000000);
+insert into player values (null,'Lucas','Ocampos','1994-07-11',37, 10,'RW','both',32000000);
+insert into player values (null,'Youssef','En-Nesyri','1997-06-01',37,51 ,'ST','both',12000000);
+insert into player values (null,'Rony','Lopes','1995-12-28',37, 12,'LW','left',10000000);
+
+#Pracownicy Sevilla FC
+insert into employees values(null,'President','José ','Carmona','1958-06-20',37);
+insert into employees values(null,'Coach','Julen','Lopetegui','1966-09-12',37);
+
+#Piłkarze Real Sociedad
+insert into player values (null,'Álex','Remiro','1995-03-24',38,3 ,'GK','right',12000000);
+insert into player values (null,'Diego','Llorente','1993-08-16',38,3 ,'CB','right',20000000);
+insert into player values (null,'Robin','Normand','1996-11-11',38,8 ,'CB','right',12000000);
+insert into player values (null,'Aihen','Muñoz','1997-08-16',38,3 ,'LB','left',4000000);
+insert into player values (null,'Joseba','Zaldua','1992-06-24',38,3 ,'RB','right',12000000);
+insert into player values (null,'Igor','Zubeldia','1997-03-30',38, 3,'CDM','right',24000000);
+insert into player values (null,'Mikel','Merino','1996-06-22',38,3 ,'CM','right',24000000);
+insert into player values (null,'Martin','Ödegaard','1998-12-17',38, 23,'CAM','left',48000000);
+insert into player values (null,'Mikel','Oyarzabal','1997-04-21',38,3 ,'RW','right',48000000);
+insert into player values (null,'Cristian','Manzanera','1992-05-21',38,3 ,'ST','right',16000000);
+insert into player values (null,'Willian','José','1991-11-23',38,13 ,'LW','right',24000000);
+
+#Pracownicy Real Sociedad
+insert into employees values(null,'President','Jokin','Aperribay','1966-05-27',38);
+insert into employees values(null,'Coach','Imanol','Alguacil','1971-07-04',38);
+
+#Piłkarze Getafe CF
+insert into player values (null,'David','Soria','1991-12-31',39, 3,'GK','right',25000000);
+insert into player values (null,'Erick','Cabaco','1995-04-19',39,21 ,'CB','right',4000000);
+insert into player values (null,'Vitorino','Antunes','1987-04-01',39,12 ,'CB','left',2000000);
+insert into player values (null,'Allan','Nyom','1988-05-10',39,8 ,'LB','right',3000000);
+insert into player values (null,'David','Timor','1989-10-17',39,3 ,'RB','left',2000000);
+insert into player values (null,'Mauro','Arambarri','1995-09-30',39,21 ,'CDM','right',20000000);
+insert into player values (null,'Nemanja','Maksimovic','1995-01-26',39,11 ,'CM','right',20000000);
+insert into player values (null,'Marc','Cucurella','1998-07-22',39,3 ,'CAM','left',18000000);
+insert into player values (null,'David','Salgueiro','1994-07-06',39, 3,'RW','right',5000000);
+insert into player values (null,'Jaime','Mata','1988-10-24',39, 4,'ST','right',8000000);
+insert into player values (null,'Ángel','Rodríguez','1987-04-26',39,3 ,'LW','right',6000000);
+
+#Pracownicy Getafe CF
+insert into employees values(null,'President','‎Ángel','Sánchez','1952-01-30',39);
+insert into employees values(null,'Coach','Pepe','Bordalás','1964-03-05',39);
+
+#Piłkarze Atletico Madryt
+insert into player values (null,'Jan','Oblak','1993-01-07',40,9 ,'GK','right',80000000);
+insert into player values (null,'José','Giménez','1995-01-20',40,21 ,'CB','right',56000000);
+insert into player values (null,'Felipe','Monteiro','1989-05-16',40,13 ,'CB','right',26000000);
+insert into player values (null,'Renan','Lodi','1998-04-08',40,13 ,'LB','left',32000000);
+insert into player values (null,'Kieran','Trippier','1990-09-19',40,15 ,'RB','right',28000000);
+insert into player values (null,'Thomas','Partey','1993-06-13',40,48,'CDM','right',40000000);
+insert into player values (null,'Saúl','Ñíguez','1994-11-21',40,3 ,'CM','left',72000000);
+insert into player values (null,'João','Félix','1999-11-10',40,12 ,'CAM','right',87000000);
+insert into player values (null,'Ángel','Correa','1995-03-09',40,3 ,'RW','right',32000000);
+insert into player values (null,'Diego','Costa','1988-10-07',40,13 ,'ST','right',15000000);
+insert into player values (null,'Yannick','Carrasco','1993-09-04',40,17 ,'LW','both',23000000);
+
+#Pracownicy Atletico Madryt
+insert into employees values(null,'President','Enrique','Cerezo','1948-02-27',40);
+insert into employees values(null,'Coach','Diego','Simeone','1970-04-28',40);
+
+#Piłkarze Valencia CF
+insert into player values (null,'Jasper','Cillessen','1989-04-22',41,18 ,'GK','right',15000000);
+insert into player values (null,'Gabriel','Paulista','1990-11-26',41,13 ,'CB','right',18000000);
+insert into player values (null,'Mouctar','Diakhaby','1996-12-19',41,8 ,'CB','right',18000000);
+insert into player values (null,'José','Gayà','1995-05-25',41,3 ,'LB','left',40000000);
+insert into player values (null,'Alessandro','Florenzi','1991-03-11',41,4 ,'RB','right',16000000);
+insert into player values (null,'Francis','Coquelin','1991-05-13',41,8 ,'CDM','right',19000000);
+insert into player values (null,'Dani','Parejo','1989-04-16',41,3 ,'CM','right',28000000);
+insert into player values (null,'Geoffrey','Kondogbia','1993-02-15',41, 8,'CAM','left',23000000);
+insert into player values (null,'Carlos','Soler','1997-01-02',41, 3,'RW','right',40000000);
+insert into player values (null,'Rodrigo','Machado','1991-03-06',41,13 ,'ST','left',40000000);
+insert into player values (null,'Gonçalo','Guedes','1996-11-29',41,12 ,'LW','right',23000000);
+
+#Pracownicy Valencia CF
+insert into employees values(null,'President','Anil','Murthy','1973-03-19',41);
+insert into employees values(null,'Coach','Albert','Celades','1975-09-29',41);
+
+#Piłkarze Villarreal CF
+insert into player values (null,'Sergio','Asenjo','1989-06-28',42, 3,'GK','right',10000000);
+insert into player values (null,'Pau','Torres','1997-01-16',42,3 ,'CB','left',16000000);
+insert into player values (null,'Ramiro','Mori','1991-03-05',42,10 ,'CB','left',5000000);
+insert into player values (null,'Alberto','Moreno','1992-07-05',42,3 ,'LB','left',6000000);
+insert into player values (null,'Rubén','Peña','1991-07-18',42,3 ,'RB','right',7000000);
+insert into player values (null,'André','Anguissa','1995-11-16',42,47 ,'CDM','right',20000000);
+insert into player values (null,'Manu','Trigueros','1991-10-17',42,3 ,'CM','right',12000000);
+insert into player values (null,'Samu','Chukwueze','1999-05-22',42, 49,'LW','left',27000000);
+insert into player values (null,'Santi','Cazorla','1984-12-13',42,3 ,'CAM','right',4000000);
+insert into player values (null,'Paco','Alcácer','1993-08-30',42,3 ,'ST','right',28000000);
+insert into player values (null,'Gerard','Moreno','1992-04-07',42,3 ,'RW','left',16000000);
+
+#Pracownicy Villarreal CF
+insert into employees values(null,'President','Fernando','Roig','1947-07-25',42);
+insert into employees values(null,'Coach','Javier','Calleja','1978-05-12',42);
+
+#Piłkarze Granada CF
+insert into player values (null,'Rui','Silva','1994-02-07',43,12 ,'GK','left',4000000);
+insert into player values (null,'Jesús','Vallejo','1997-01-05',43, 3,'CB','right',6000000);
+insert into player values (null,'Domingos','Duarte','1995-03-10',43, 12,'CB','right',4000000);
+insert into player values (null,'Carlos','Neva','1996-06-12',43,3 ,'LB','left',800000);
+insert into player values (null,'Dimitri','Foulquier','1993-03-23',43,8 ,'RB','right',2000000);
+insert into player values (null,'Yangel','Herrera','1998-01-07',43,46 ,'CDM','right',9000000);
+insert into player values (null,'Fede','Vico','1994-07-04',43,3 ,'CAM','left',1000000);
+insert into player values (null,'Ángel','Montoro','1988-06-25',43,3 ,'CM','right',1000000);
+insert into player values (null,'Gil','Dias','1996-09-28',43, 2,'RW','left',3000000);
+insert into player values (null,'Carlos','Fernández','1996-05-06',43,3 ,'ST','left',4000000);
+insert into player values (null,'Darwin','Machís','1993-02-07',43,46 ,'LW','right',3000000);
+
+#Pracownicy Granada CF
+insert into employees values(null,'President','Jiang','Lizhang','1981-10-27',43);
+insert into employees values(null,'Coach','Diego','Martinez','1980-12-16',43);
+
+#Piłkarze Athletic Bilbao
+insert into player values (null,'Unai','Simón','1997-06-11',44,3 ,'GK','right',16000000);
+insert into player values (null,'Iñigo','Martínez','1991-05-17',44,3 ,'CB','left',26000000);
+insert into player values (null,'Yeray','Álvarez','1995-01-24',44,3 ,'CB','right',24000000);
+insert into player values (null,'Yuri','Berchiche','1990-02-10',44, 3,'LB','left',16000000);
+insert into player values (null,'Ander','Capa','1992-02-08',44,3 ,'RB','right',6000000);
+insert into player values (null,'Mikel','San José','1989-05-30',44,3 ,'CDM','right',5000000);
+insert into player values (null,'Unai','López','1995-10-30',44,3 ,'CM','right',3000000);
+insert into player values (null,'Raúl','García','1986-07-11',44,3 ,'CAM','right',6000000);
+insert into player values (null,'Ibai','Gómez','1989-11-11',44, 3,'RW','right',3000000);
+insert into player values (null,'Iñaki','Williams','1994-06-15',44,3 ,'ST','right',40000000);
+insert into player values (null,'Iker','Muniain ','1992-12-19',44,3 ,'LW','right',14000000);
+
+#Pracownicy Athletic Bilbao
+insert into employees values(null,'President','Aitor','Elizegi','1966-06-27',44);
+insert into employees values(null,'Coach','Gaizka','Garitano','1975-09-27',44);
+
+#Piłkarze Osasuna Pampeluna
+insert into player values (null,'Sergio','Herrera','1993-06-05',45,3 ,'GK','right',1000000);
+insert into player values (null,'Aridane','Hernández','1989-03-23',45, 3,'CB','right',3000000);
+insert into player values (null,'David','García','1994-02-14',45,3 ,'CB','right',2000000);
+insert into player values (null,'Pervis','Estupiñán','1998-01-21',45,3 ,'LB','left',7000000);
+insert into player values (null,'Nacho','Vidal','1995-01-24',45,3 ,'RB','right',2000000);
+insert into player values (null,'Jon','Moncayola','1998-05-13',45,3 ,'CDM','right',3000000);
+insert into player values (null,'Rubén','García','1993-07-14',45,3 ,'CM','right',6000000);
+insert into player values (null,'Chimy','Ávila','1984-02-06',45,10 ,'ST','right',12000000);
+insert into player values (null,'Adrián','López','1988-01-08',45,3 ,'RW','right',2000000);
+insert into player values (null,'Roberto','Torres','1989-03-07',45,3 ,'CAM','right',4000000);
+insert into player values (null,'José','Arnáiz','1995-04-15',45, 3,'LW','right',2000000);
+
+#Pracownicy Osasuna Pampeluna
+insert into employees values(null,'President','Luis','Sabalza','1947-10-23',45);
+insert into employees values(null,'Coach','Jagoba','Arrasate','1978-04-22',45);
+
+#Piłkarze Real Betis Sewilla
+insert into player values (null,'Joel','Robles','1990-06-17',46,3 ,'GK','right',6000000);
+insert into player values (null,'Marc','Bartra','1991-01-15',46,3 ,'CB','right',18000000);
+insert into player values (null,'Aïssa','Mandi','1991-10-22',46,8 ,'CB','right',16000000);
+insert into player values (null,'Alfonso','Pedraza','1996-04-09',46, 3,'LB','left',10000000);
+insert into player values (null,'Emerson','Souza','1999-01-14',46,13 ,'RB','right',18000000);
+insert into player values (null,'William','Carvalho','1992-04-07',46,12 ,'CDM','right',16000000);
+insert into player values (null,'Carles','Aleñá','1998-01-05',46,3 ,'CM','left',18000000);
+insert into player values (null,'Nabil','Fekir','1993-07-18',46,8 ,'CAM','left',32000000);
+insert into player values (null,'Borja','Iglesias','1993-01-17',46,3 ,'RW','right',15000000);
+insert into player values (null,'Loren','Morón','1993-12-30',46, 3,'ST','right',16000000);
+insert into player values (null,'Cristian','Tello','1991-08-11',46,3 ,'LW','both',5000000);
+
+#Pracownicy Real Betis Sewilla
+insert into employees values(null,'President','Ángel','Haro','1974-11-02',46);
+insert into employees values(null,'Coach','Joan','Sicilia','1970-02-05',46);
+
+#Piłkarze Levante UD
+insert into player values (null,'Aitor','Fernández','1991-05-03',47,3 ,'GK','right',8000000);
+insert into player values (null,'Rúben','Vezo','1994-04-25',47,12 ,'CB','right',5000000);
+insert into player values (null,'Sergio','Postigo','1988-11-04',47,3 ,'CB','right',2000000);
+insert into player values (null,'Carlos','Clerc','1992-02-21',47,3 ,'LB','left',2000000);
+insert into player values (null,'Jorge','Miramón','1989-06-02',47,3 ,'RB','right',3000000);
+insert into player values (null,'Nemanja','Radoja','1993-02-06',47,11 ,'CDM','right',3000000);
+insert into player values (null,'Enis','Bardhi','1995-07-02',47, 52,'CM','right',12000000);
+insert into player values (null,'José','Campaña','1993-05-31',47,3 ,'CAM','right',12000000);
+insert into player values (null,'Hernâni','Fortes','1991-08-20',47,12 ,'RW','right',2000000);
+insert into player values (null,'Roger','Martí','1991-01-03',47,3 ,'ST','right',8000000);
+insert into player values (null,'José','Morales','1987-07-23',47,3 ,'LW','right',7000000);
+
+#Pracownicy Levante UD
+insert into employees values(null,'President','Francisco','Catalán','1943-05-07',47);
+insert into employees values(null,'Coach','Paco','López','1967-09-19',47);
+
+#Piłkarze Deportivo Alaves
+insert into player values (null,'Fernando','Pacheco','1992-05-18',48, 3,'GK','left',15000000);
+insert into player values (null,'Víctor','Laguardia','1989-11-05',48,3 ,'CB','right',7000000);
+insert into player values (null,'Lisandro','Magallán','1993-09-27',48,10 ,'CB','right',5000000);
+insert into player values (null,'Rubén','Duarte','1995-10-18',48,3 ,'LB','left',5000000);
+insert into player values (null,'Martin','Aguirregabiria','1996-05-10',48,3 ,'RB','right',5000000);
+insert into player values (null,'Pere','Pons','1993-02-20',48,3 ,'CDM','right',3000000);
+insert into player values (null,'Víctor','Camarasa','1994-05-28',48,3 ,'CM','right',4000000);
+insert into player values (null,'Luis','Rioja','1993-10-16',48,3 ,'LW','left',2000000);
+insert into player values (null,'Oliver','Burke','1997-04-07',48,53 ,'RW','right',5000000);
+insert into player values (null,'Lucas','Pérez','1988-09-10',48, 3,'ST','left',000000);
+insert into player values (null,'José','Mato','1990-03-27',48,3 ,'CAM','right',6000000);
+
+#Pracownicy Deportivo Alaves
+insert into employees values(null,'President','Alfonso','Trocóniz','1959-12-11',48);
+insert into employees values(null,'Coach','Asier','Garitano','1969-12-06',48);
+
+#Piłkarze Real Valladolid
+insert into player values (null,'Jordi','Masip','1989-01-03',49,3 ,'GK','right',5000000);
+insert into player values (null,'Mohammed','Salisu','1999-04-17',49,48 ,'CB','left',11000000);
+insert into player values (null,'Kiko','Olivas','1988-09-21',49,3 ,'CB','right',2000000);
+insert into player values (null,'Nacho','Martínez','1989-03-07',49,3 ,'LB','left',4000000);
+insert into player values (null,'Pedro','Porro','1999-09-13',49,3 ,'RB','right',9000000);
+insert into player values (null,'Joaquín','Fernández','1996-05-31',49,3 ,'CDM','right',3000000);
+insert into player values (null,'Rubén','Alcaraz','1991-05-01',49,3 ,'CM','right',8000000);
+insert into player values (null,'Hatem','Ben Arfa','1987-03-07',49,8 ,'CAM','right',4000000);
+insert into player values (null,'Sergi','Guardiola','1991-05-29',49,3 ,'RW','left',5000000);
+insert into player values (null,'Óscar','Plano','1991-02-11',49, 3,'RW','both',3000000);
+insert into player values (null,'Toni','Villa','1995-01-07',49,3 ,'LW','right',4000000);
+
+#Pracownicy Real Valladolid
+insert into employees values(null,'President','Ronaldo','Nazário ','1976-09-18',49);
+insert into employees values(null,'Coach','Sergio','Soriano','1976-11-10',49);
+
+#Piłkarze SD Eibar
+insert into player values (null,'Marko','Dmitrovic','1992-01-24',50, 11,'GK','left',10000000);
+insert into player values (null,'Paulo','Oliveira','1992-01-08',50,12 ,'CB','right',5000000);
+insert into player values (null,'Pedro','Bigas','1990-05-15',50,3 ,'CB','left',2000000);
+insert into player values (null,'José','Ángel','1989-09-05',50,3 ,'LB','left',4000000);
+insert into player values (null,'Álvaro','Tejero','1996-07-20',50,3 ,'RB','both',3000000);
+insert into player values (null,'Pape','Diop','1986-03-19',50,8 ,'CDM','right',1000000);
+insert into player values (null,'Gonzalo','Escalante','1993-03-27',50,10 ,'CM','right',3000000);
+insert into player values (null,'Sebastián','Cristóforo','1993-08-23',50,21 ,'CAM','right',1000000);
+insert into player values (null,'Takashi','Inui','1988-06-02',50,54 ,'LW','right',3000000);
+insert into player values (null,'Kike','García','1989-11-25',50, 3,'ST','right',3000000);
+insert into player values (null,'Pedro','León','1986-11-24',50, 3,'RW','right',2000000);
+
+#Pracownicy SD Eibar
+insert into employees values(null,'President','Amaia','Gorostiza','1961-03-23',50);
+insert into employees values(null,'Coach','José','Mendilibar','1961-03-14',50);
+
+#Piłkarze Celta Vigo
+insert into player values (null,'Rubén','Blanco','1995-07-25',51,3 ,'GK','right',8000000);
+insert into player values (null,'Joseph','Aidoo','1995-09-29',51,48 ,'CB','right',7000000);
+insert into player values (null,'Jeison','Murillo','1992-05-27',51,45 ,'CB','right',7000000);
+insert into player values (null,'Lucas','Olaza','1994-07-21',51, 21,'LB','left',3000000);
+insert into player values (null,'Hugo','Mallo','1991-06-22',51,3 ,'RB','right',7000000);
+insert into player values (null,'Okay','Yokuslu','1994-03-09',51,44 ,'CDM','right',6000000);
+insert into player values (null,'Fran','Beltrán','1999-02-03',51,3 ,'CM','right',14000000);
+insert into player values (null,'Rafael','Alcântara','1993-02-12',51,13 ,'CAM','right',10000000);
+insert into player values (null,'Brais','Méndez','1997-01-07',51,3 ,'RW','right',12000000);
+insert into player values (null,'Iago','Aspas','1987-08-01',51,3 ,'ST','left',16000000);
+insert into player values (null,'Denis','Suárez','1994-01-06',51,3 ,'LW','right',10000000);
+
+#Pracownicy Celta Vigo
+insert into employees values(null,'President','Carlos','Mouriño','1943-03-04',51);
+insert into employees values(null,'Coach','Óscar','García','1973-04-26',51);
+
+#Piłkarze RCD Mallorca
+insert into player values (null,'Fabricio','Ramírez','1987-12-31',52,3 ,'GK','right',1000000);
+insert into player values (null,'Martin','Valjent','1995-12-11',52, 6,'CB','right',3000000);
+insert into player values (null,'Antonio','Raíllo','1991-10-08',52,3 ,'CB','right',2000000);
+insert into player values (null,'Leonardo','Koutris','1995-07-23',52,13 ,'LB','left',4000000);
+insert into player values (null,'Joan','Sastre','1997-04-30',52,3 ,'RB','right',2000000);
+insert into player values (null,'Sungyueng','Ki','1989-01-24',52, 42,'CDM','right',3000000);
+insert into player values (null,'Aleix','Febas','1996-02-22',52,3 ,'CM','right',3000000);
+insert into player values (null,'Dani','Rodríguez','1988-06-06',52, 3,'CAM','right',1000000);
+insert into player values (null,'Takefusa','Kubo','2001-06-04',52,54 ,'RW','left',14000000);
+insert into player values (null,'Cucho','Hernández','1993-04-22',52, 45,'ST','right',7000000);
+insert into player values (null,'Lago','Júnior','1990-12-31',52, 55,'LW','right',4000000);
+
+#Pracownicy RCD Mallorca
+insert into employees values(null,'President','Andy','Kohlberg','1959-09-17',52);
+insert into employees values(null,'Coach','Vicente','Moreno','1974-10-26',52);
+
+#Piłkarze CD Leganes
+insert into player values (null,'Juan','Soriano','1997-08-23',53, 3,'GK','right',2000000);
+insert into player values (null,'Dimitrios','Siovas','1988-09-16',53,25 ,'CB','left',5000000);
+insert into player values (null,'Chidozie','Awaziem','1997-01-01',53,49 ,'CB','right',4000000);
+insert into player values (null,'Jonathan','Silva','1994-06-29',53,10 ,'LB','left',3000000);
+insert into player values (null,'Roberto','Rosales','1988-11-20',53, 46,'RB','right',2000000);
+insert into player values (null,'Rubén','Pérez','1989-04-26',53, 3,'CDM','right',6000000);
+insert into player values (null,'Roque','Mesa','1989-06-07',53, 3,'CM','right',6000000);
+insert into player values (null,'Óscar','Rodríguez','1998-06-28',53,3 ,'CAM','right',11000000);
+insert into player values (null,'Miguel','Guerrero','1990-07-12',53,3 ,'RW','right',2000000);
+insert into player values (null,'Roger','Assalé','1991-12-23',53, 55,'ST','right',6000000);
+insert into player values (null,'Bryan','Gil','2001-02-11',53, 3,'LW','left',9000000);
+
+#Pracownicy CD Leganes
+insert into employees values(null,'President','‎María','Pavón','1959-11-14',53);
+insert into employees values(null,'Coach','Javier','Aguirre','1958-12-01',53);
+
+#Piłkarze Espanyol Barcelona
+insert into player values (null,'Oier','Olazábal','1989-09-14',54,3 ,'GK','left',2000000);
+insert into player values (null,'Leandro','Cabrera','1991-06-17',54,21 ,'CB','left',8000000);
+insert into player values (null,'Bernardo','Espinosa','1989-07-11',54,45 ,'CB','right',5000000);
+insert into player values (null,'Adrià','Pedrosa','1998-05-13',54,3 ,'LB','left',9000000);
+insert into player values (null,'Víctor','Gómez','2000-04-01',54,3 ,'RB','right',2000000);
+insert into player values (null,'Marc','Roca','1996-11-26',54,3 ,'CDM','right',16000000);
+insert into player values (null,'Sergi','Darder','1993-12-22',54,3 ,'CM','right',11000000);
+insert into player values (null,'Matías','Vargas','1997-05-08',54,10 ,'CAM','right',9000000);
+insert into player values (null,'Oscar','Melendo','1997-08-23',54,3 ,'RW','left',6000000);
+insert into player values (null,'Raúl','Tomás','1994-10-17',54,3 ,'ST','right',16000000);
+insert into player values (null,'Jonathan','Calleri','1993-09-23',54, 10,'LW','right',6000000);
+
+#Pracownicy Espanyol Barcelona
+insert into employees values(null,'President','Chen','Yansheng','1970-08-24',54);
+insert into employees values(null,'Coach','Abelardo','Artuña','1970-04-19',54);
+
+
+
+
+
+
