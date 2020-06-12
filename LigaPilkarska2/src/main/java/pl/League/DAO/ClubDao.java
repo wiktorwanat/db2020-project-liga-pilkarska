@@ -80,4 +80,70 @@ public class ClubDao {
 		}
 		return wartosc;
 	}
+	public static List informationAboutClub(String club_name)
+	{
+		List information= new ArrayList();
+		try {
+			String query="select club_name,city,dateOfFounding, name_stadium,capacity,name_league,SUM(market_value) AS team_value FROM club \r\n" + 
+					"left join stadium on club.club_id=stadium.clubID \r\n" + 
+					"left join player on club.club_id=player.clubID \r\n" + 
+					"left join leagues on club.leagueID=leagues.leagues_id \r\n" + 
+					"where club.club_name=?";
+			PreparedStatement statement=connectionWithDateBase.prepareStatement(query);
+			statement.setString(1, club_name);
+			ResultSet result=statement.executeQuery();
+			while(result.next()) {
+				information.add(result.getString(1));
+				information.add(result.getString(2));
+				information.add(result.getDate(3));
+				information.add(result.getString(4));
+				information.add(result.getInt(5));
+				information.add(result.getString(6));
+				information.add(result.getInt(7));
+			}
+			System.out.println(information);
+		}catch(SQLException sqlexc) {
+			System.out.println(sqlexc.getMessage());
+		}
+		return information;
+	}
+
+	public static List expectedValue(int value)
+	{
+		List club= new ArrayList();
+		try {
+			String query="SELECT club_name from club\n" +
+					"where club.club_id\n" +
+					"IN(SELECT clubID from player WHERE market_value >=?) order by ;";
+			PreparedStatement statement=connectionWithDateBase.prepareStatement(query);
+			statement.setInt(1, value);
+			ResultSet result=statement.executeQuery();
+			while(result.next()) {
+				club.add(result.getString(1));
+
+			}
+
+		}catch(SQLException sqlexc) {
+			System.out.println(sqlexc.getMessage());
+		}
+		return club;
+	}
+	
+	public static double ageAverage(String club_name) {
+		double average=0;
+		try {
+			String query="SELECT AVG(DateDiff(now(),born_date)/365) as average from player\n" +
+					"inner JOIN club on player.clubID=club.club_id\n" +
+					"WHERE club_name=?";
+			PreparedStatement statement=connectionWithDateBase.prepareStatement(query);
+			statement.setString(1, club_name);
+			ResultSet result=statement.executeQuery();
+			if(result.next()) {
+				average=result.getDouble(1);
+			}
+		}catch(SQLException sqlexc) {
+			System.out.println(sqlexc.getMessage());
+		}
+		return average;
+	}
 }

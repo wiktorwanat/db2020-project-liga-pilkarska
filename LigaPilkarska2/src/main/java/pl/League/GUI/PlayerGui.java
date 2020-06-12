@@ -1,18 +1,17 @@
 package pl.League.GUI;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class PlayerGui extends JFrame {
 
@@ -76,5 +75,17 @@ public class PlayerGui extends JFrame {
 		backbutton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		backbutton.setBounds(172, 252, 89, 23);
 		contentPane.add(backbutton);
+		
+		JButton btnPlayersAgeAverage = new JButton("Players age average in club");
+		btnPlayersAgeAverage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				ClubAgeAverage gui=new ClubAgeAverage();
+				gui.setVisible(true);
+			}
+		});
+		btnPlayersAgeAverage.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		btnPlayersAgeAverage.setBounds(46, 108, 355, 23);
+		contentPane.add(btnPlayersAgeAverage);
 	}
 }

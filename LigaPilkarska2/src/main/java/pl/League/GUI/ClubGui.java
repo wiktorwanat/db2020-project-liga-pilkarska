@@ -39,7 +39,7 @@ public class ClubGui extends JFrame {
 	 */
 	public ClubGui() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 352);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -54,7 +54,7 @@ public class ClubGui extends JFrame {
 			}
 		});
 		backbutton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		backbutton.setBounds(174, 227, 89, 23);
+		backbutton.setBounds(174, 262, 89, 23);
 		contentPane.add(backbutton);
 		
 		JLabel ClubTitle = new JLabel("Clubs");
@@ -74,7 +74,7 @@ public class ClubGui extends JFrame {
 			}
 		});
 		addClubButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		addClubButton.setBounds(41, 195, 355, 23);
+		addClubButton.setBounds(41, 162, 355, 23);
 		contentPane.add(addClubButton);
 		
 		JButton clubValueButton = new JButton("Calculate club value");
@@ -89,7 +89,7 @@ public class ClubGui extends JFrame {
 		clubValueButton.setBounds(41, 60, 355, 23);
 		contentPane.add(clubValueButton);
 		
-		JButton maxValuableClubsbutton = new JButton("Top 10 most valuable players in club");
+		JButton maxValuableClubsbutton = new JButton("Top 5 most valuable players in club");
 		maxValuableClubsbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -100,5 +100,29 @@ public class ClubGui extends JFrame {
 		maxValuableClubsbutton.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		maxValuableClubsbutton.setBounds(41, 94, 355, 23);
 		contentPane.add(maxValuableClubsbutton);
+		
+		JButton clubWithExpensivePlyerButton = new JButton("Most left/right footed players in club");
+		clubWithExpensivePlyerButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				ClubFootedPlayersGui footgui=new ClubFootedPlayersGui();
+				footgui.setVisible(true);
+			}
+		});
+		clubWithExpensivePlyerButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		clubWithExpensivePlyerButton.setBounds(41, 128, 355, 23);
+		contentPane.add(clubWithExpensivePlyerButton);
+		
+		JButton clubInfoButton = new JButton("Club Information");
+		clubInfoButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				ClubInformationGui gui=new ClubInformationGui();
+				gui.setVisible(true);
+			}
+		});
+		clubInfoButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		clubInfoButton.setBounds(41, 196, 355, 23);
+		contentPane.add(clubInfoButton);
 	}
 }

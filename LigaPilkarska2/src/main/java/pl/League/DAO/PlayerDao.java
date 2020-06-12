@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.Hashtable;
 import java.util.List;
 
 import pl.League.DataBase.BaseConnection;
@@ -73,7 +75,7 @@ public class PlayerDao {
 	public static List<Player> mostValuablePlayersFromClub(String clubName){
 		List<Player> players=new ArrayList<Player>();
 		try {
-		String query="select * from football_leagues.player where clubID=(select club_id from football.club where club_name=?) order by market_value desc limit 5;";
+		String query="select * from football_leagues.player where clubID=(select club_id from football_leagues.club where club_name=?) order by market_value desc limit 5;";
 		PreparedStatement statement=connectionWithDateBase.prepareStatement(query);
 		statement.setString(1, clubName);
 		ResultSet result=statement.executeQuery();
@@ -84,5 +86,24 @@ public class PlayerDao {
 			System.out.println(sqlexc.getMessage());
 		}
 		return players;
+	}
+	
+	public static String[] calculateFootedPlayers(String leg)
+	{
+		String[] tab=new String[5];
+		try {
+			String query="Select club_name, COUNT(player_id) as number from player inner JOIN club on player.clubID=club.club_id where player.foot =? GROUP BY clubID order by number desc limit 5;";
+			PreparedStatement statement=connectionWithDateBase.prepareStatement(query);
+			statement.setString(1, leg);
+			ResultSet result=statement.executeQuery();
+			int i=0;
+			while(result.next()) {
+				tab[i]=result.getString(1)+" - "+result.getInt(2);
+				i++;
+			}
+		}catch(SQLException sqlexc) {
+			System.out.println(sqlexc.getMessage());
+		}
+		return tab;
 	}
 }

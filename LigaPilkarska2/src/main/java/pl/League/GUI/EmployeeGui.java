@@ -1,18 +1,17 @@
 package pl.League.GUI;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import java.awt.Font;
-import javax.swing.JLabel;
 import java.awt.Color;
-import javax.swing.SwingConstants;
-import java.awt.event.ActionListener;
+import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class EmployeeGui extends JFrame {
 
@@ -54,7 +53,7 @@ public class EmployeeGui extends JFrame {
 			}
 		});
 		backbutton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		backbutton.setBounds(181, 227, 89, 23);
+		backbutton.setBounds(172, 187, 89, 23);
 		contentPane.add(backbutton);
 		
 		JLabel employeesTitle = new JLabel("Employees");
@@ -65,7 +64,7 @@ public class EmployeeGui extends JFrame {
 		employeesTitle.setBounds(10, 11, 414, 38);
 		contentPane.add(employeesTitle);
 		
-		JButton addEmployeeButton = new JButton("Add new Employee");
+		JButton addEmployeeButton = new JButton("Add new Employe");
 		addEmployeeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -74,12 +73,19 @@ public class EmployeeGui extends JFrame {
 			}
 		});
 		addEmployeeButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		addEmployeeButton.setBounds(39, 193, 355, 23);
+		addEmployeeButton.setBounds(39, 113, 355, 23);
 		contentPane.add(addEmployeeButton);
 		
-		JButton findEmployeeByClubButton = new JButton("Search an employee from the club");
-		findEmployeeByClubButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		findEmployeeByClubButton.setBounds(39, 159, 355, 23);
-		contentPane.add(findEmployeeByClubButton);
+		JButton deleteButton = new JButton("Delete Employe");
+		deleteButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				EmployeeFromClubGui gui=new EmployeeFromClubGui();
+				gui.setVisible(true);
+			}
+		});
+		deleteButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		deleteButton.setBounds(39, 79, 355, 23);
+		contentPane.add(deleteButton);
 	}
 }
