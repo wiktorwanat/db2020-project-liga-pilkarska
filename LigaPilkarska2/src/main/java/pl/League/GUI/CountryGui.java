@@ -39,7 +39,7 @@ public class CountryGui extends JFrame {
 	 */
 	public CountryGui() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 196);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -54,7 +54,7 @@ public class CountryGui extends JFrame {
 			}
 		});
 		backbutton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		backbutton.setBounds(181, 227, 89, 23);
+		backbutton.setBounds(164, 127, 89, 23);
 		contentPane.add(backbutton);
 		
 		JLabel countryTitle = new JLabel("Countries");
@@ -65,7 +65,7 @@ public class CountryGui extends JFrame {
 		countryTitle.setBounds(10, 11, 414, 38);
 		contentPane.add(countryTitle);
 		
-		JButton addCountryButton = new JButton("Add new Employee");
+		JButton addCountryButton = new JButton("Add new country");
 		addCountryButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -74,7 +74,7 @@ public class CountryGui extends JFrame {
 			}
 		});
 		addCountryButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		addCountryButton.setBounds(39, 193, 355, 23);
+		addCountryButton.setBounds(34, 93, 355, 23);
 		contentPane.add(addCountryButton);
 	}
 

@@ -46,19 +46,16 @@ public class EmployeeDao {
 		}
 		return employee;
 	}
-	public static boolean deleteByEmployeeName(String employee_name,String employee_surname) {
-		boolean status=false;		
+	public static void deleteByEmployeeName(String employee_name,String employee_surname) {	
 		try {
 			String query="delete from football_leagues.employees where first_name=? and surname=?;";
 			PreparedStatement statement=connectionWithDateBase.prepareStatement(query);
 			statement.setString(1, employee_name);
 			statement.setString(2, employee_surname);
-			ResultSet result=statement.executeQuery();
-			status=true;
+			int result=statement.executeUpdate();
 		}catch(SQLException sqlexc) {
 			System.out.println(sqlexc.getMessage());
 		}
-		return status;
 	}
 	public static void addEmployee(String position,String firstName,String surname,String dateOfBorn,String clubName) {
 		try {

@@ -88,6 +88,17 @@ public class LeaguesGui extends JFrame {
 		findLeagueWithSizeButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		findLeagueWithSizeButton.setBounds(42, 131, 355, 23);
 		contentPane.add(findLeagueWithSizeButton);
+		
+		JButton findLeagueByNameButton = new JButton("Find league by name");
+		findLeagueByNameButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				FindLeagueGui gui=new FindLeagueGui();
+				gui.setVisible(true);
+			}
+		});
+		findLeagueByNameButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		findLeagueByNameButton.setBounds(42, 93, 355, 23);
+		contentPane.add(findLeagueByNameButton);
 	}
-
 }

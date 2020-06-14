@@ -1,24 +1,23 @@
 package pl.League.GUI;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import pl.League.DAO.StadiumDao;
 
-import javax.swing.JLabel;
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-public class AddStadiumGui extends JFrame {
+public class FindStadiumByNameGui extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField stadiumNameField;
@@ -34,7 +33,7 @@ public class AddStadiumGui extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AddStadiumGui frame = new AddStadiumGui();
+					FindStadiumByNameGui frame = new FindStadiumByNameGui();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,7 +45,7 @@ public class AddStadiumGui extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AddStadiumGui() {
+	public FindStadiumByNameGui() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 554);
 		contentPane = new JPanel();
@@ -54,13 +53,13 @@ public class AddStadiumGui extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel addStadiumLabel = new JLabel("Add new Stadium");
-		addStadiumLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		addStadiumLabel.setForeground(new Color(0, 128, 0));
-		addStadiumLabel.setFont(new Font("Dialog", Font.BOLD | Font.ITALIC, 29));
-		addStadiumLabel.setBackground(new Color(0, 128, 0));
-		addStadiumLabel.setBounds(10, 11, 414, 38);
-		contentPane.add(addStadiumLabel);
+		JLabel findStadiumLabel = new JLabel("Find stadium by name");
+		findStadiumLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		findStadiumLabel.setForeground(new Color(0, 128, 0));
+		findStadiumLabel.setFont(new Font("Dialog", Font.BOLD | Font.ITALIC, 29));
+		findStadiumLabel.setBackground(new Color(0, 128, 0));
+		findStadiumLabel.setBounds(10, 11, 414, 38);
+		contentPane.add(findStadiumLabel);
 		
 		JLabel stadiumNameLabel = new JLabel("Stadium name:");
 		stadiumNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -120,10 +119,16 @@ public class AddStadiumGui extends JFrame {
 		JButton confirmButton = new JButton("Submit");
 		confirmButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				StadiumDao.addStadium(stadiumNameField.getText(), stadiumAdressField.getText(), capacityField.getText(), clubField.getText(), dateOfBuiltField.getText());
-				dispose();
-				StadiumGui gui=new StadiumGui();
-				gui.setVisible(true);
+				try {
+				List list=StadiumDao.findByStadiumName1(stadiumNameField.getText());
+				stadiumNameField.setText(list.get(0).toString());
+				stadiumAdressField.setText(list.get(1).toString());
+				dateOfBuiltField.setText(list.get(2).toString());
+				clubField.setText(list.get(3).toString());
+				capacityField.setText(list.get(4).toString());
+				}catch(IndexOutOfBoundsException wrong) {
+					System.out.println(wrong.getMessage());
+				}
 			}
 		});
 		confirmButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
@@ -141,5 +146,18 @@ public class AddStadiumGui extends JFrame {
 		backButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		backButton.setBounds(266, 429, 158, 29);
 		contentPane.add(backButton);
+		
+		JButton deleteButton = new JButton("Delete this Stadium ");
+		deleteButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				StadiumDao.deleteStadiumByName(stadiumNameField.getText());
+				dispose();
+				StadiumGui gui=new StadiumGui();
+				gui.setVisible(true);
+			}
+		});
+		deleteButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		deleteButton.setBounds(104, 469, 239, 29);
+		contentPane.add(deleteButton);
 	}
 }

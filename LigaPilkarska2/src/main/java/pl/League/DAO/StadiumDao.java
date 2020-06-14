@@ -45,6 +45,35 @@ public class StadiumDao {
 		}
 		return stadium;
 	}
+	public static List findByStadiumName1(String stadiumName) {
+		List list=new ArrayList();
+		try {
+			String query="select name_stadium,address,dateOfBuilt,club.club_name,capacity from football_leagues.stadium left join football_leagues.club on club.club_id=stadium.clubID where name_stadium=?;";
+			PreparedStatement statement=connectionWithDateBase.prepareStatement(query);
+			statement.setString(1, stadiumName);
+			ResultSet result=statement.executeQuery();
+			if(result.next()) {
+				list.add(result.getString(1));
+				list.add(result.getString(2));
+				list.add(result.getDate(3));
+				list.add(result.getString(4));
+				list.add(result.getInt(5));
+			}
+		}catch(SQLException sqlexc) {
+			System.out.println(sqlexc.getMessage());
+		}
+		return list;
+	}
+	public static void deleteStadiumByName(String stadiumName) {
+		try {
+			String query="delete from football_leagues.stadium where name_stadium=?;";
+			PreparedStatement statement=connectionWithDateBase.prepareStatement(query);
+			statement.setString(1, stadiumName);
+			int result=statement.executeUpdate();
+		}catch(SQLException sqlexc) {
+			System.out.println(sqlexc.getMessage());
+		}
+	}
 	public static double averageOfStadiumsCapacity() {
 		double average=0.0;
 		try {

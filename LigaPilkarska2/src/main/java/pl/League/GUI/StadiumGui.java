@@ -39,7 +39,7 @@ public class StadiumGui extends JFrame {
 	 */
 	public StadiumGui() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 358);
+		setBounds(100, 100, 450, 284);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -62,7 +62,7 @@ public class StadiumGui extends JFrame {
 			}
 		});
 		addStadiumButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		addStadiumButton.setBounds(39, 236, 355, 23);
+		addStadiumButton.setBounds(39, 180, 355, 23);
 		contentPane.add(addStadiumButton);
 		
 		JButton backbutton = new JButton("Back");
@@ -74,7 +74,7 @@ public class StadiumGui extends JFrame {
 			}
 		});
 		backbutton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		backbutton.setBounds(172, 288, 89, 23);
+		backbutton.setBounds(168, 214, 89, 23);
 		contentPane.add(backbutton);
 		
 		JButton sredniaWielkoscStadionuButton = new JButton("Average capacity of stadiums");
@@ -86,7 +86,19 @@ public class StadiumGui extends JFrame {
 			}
 		});
 		sredniaWielkoscStadionuButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		sredniaWielkoscStadionuButton.setBounds(39, 170, 355, 23);
+		sredniaWielkoscStadionuButton.setBounds(39, 146, 355, 23);
 		contentPane.add(sredniaWielkoscStadionuButton);
+		
+		JButton stadiumByNameButton = new JButton("Find stadium by name");
+		stadiumByNameButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				FindStadiumByNameGui gui=new FindStadiumByNameGui();
+				gui.setVisible(true);
+			}
+		});
+		stadiumByNameButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		stadiumByNameButton.setBounds(39, 112, 355, 23);
+		contentPane.add(stadiumByNameButton);
 	}
 }

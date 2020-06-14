@@ -32,7 +32,25 @@ public class LeaguesDao {
 	}
 	
 	
-	public static Leagues findByLeagueName(String league_name) {
+	public static List findByLeagueName(String league_name) {
+		List lista=new ArrayList();
+		try {
+			String query="select size_league,name_league,country.country_name from football_leagues.leagues  left join football_leagues.country on leagues.countryID=country.country_id where name_league=?;";
+			PreparedStatement statement=connectionWithDateBase.prepareStatement(query);
+			statement.setString(1, league_name);
+			ResultSet result=statement.executeQuery();
+			if(result.next()) {
+				lista.add(result.getInt(1));
+				lista.add(result.getString(2));
+				lista.add(result.getString(3));
+
+			}
+		}catch(SQLException sqlexc) {
+			System.out.println(sqlexc.getMessage());
+		}
+		return lista;
+	}
+	public static Leagues findByLeagueName1(String league_name) {
 		Leagues leagues=new Leagues();
 		try {
 			String query="select * from football_leagues.leagues where name_league=?;";
@@ -47,6 +65,7 @@ public class LeaguesDao {
 		}
 		return leagues;
 	}
+	
 	public static void addLeague(String countryName,String size_league,String leagueName) {
 		try {
 			int countryId=CountryDao.findByCountryName(countryName).getCountry_id();

@@ -48,7 +48,7 @@ public class ClubDao {
 	
 	public static void addClub(String clubName,String city,String dateOfFounding,String leagueName) {
 		try {
-			int leagueId=LeaguesDao.findByLeagueName(leagueName).getLeagues_id();
+			int leagueId=LeaguesDao.findByLeagueName1(leagueName).getLeagues_id();
 			String query="insert into football_leagues.club (club_id,club_name,city,dateOfFounding,leagueID) select * from (select null,?,?,?,?)as tmp where not exists (select club_name from football_leagues.club where club_name=?) LIMIT 1;";
 			PreparedStatement statement=connectionWithDateBase.prepareStatement(query);
 			statement.setString(1, clubName);

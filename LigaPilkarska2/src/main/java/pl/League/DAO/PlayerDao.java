@@ -32,21 +32,30 @@ public class PlayerDao {
 		return players;
 	}
 
-
-	public static Player findBySurName(String surname) {
-		Player player=new Player();
+// PRZEROB TO TAK ZEBY ZWRACALO SAME STRINGI JUZ A NIE iD I POPRAW TO POZNIEJ W GUI
+	public static List findPlayer(String surname,String first_name,String position) {
+		List info=new ArrayList();
 		try {
-			String query="select * from football_leagues.player where surname=?;";
+			String query="select first_name,surname,born_date,club_name,country_name,position,foot,market_value from football_leagues.player left join club on club.club_id=player.player_id left join country on country.country_id=player.player_id where surname=? and first_name=? and position=? limit 1;";
 			PreparedStatement statement=connectionWithDateBase.prepareStatement(query);
 			statement.setString(1, surname);
+			statement.setString(2, first_name);
+			statement.setString(3, position);
 			ResultSet result=statement.executeQuery();
 			if(result.next()) {
-				player=new Player(result.getInt(1),result.getString(2),result.getString(3),result.getDate(4),result.getInt(5),result.getInt(6),result.getString(7),result.getString(8),result.getDouble(9));
+				info.add(result.getString(1));
+				info.add(result.getString(2));
+				info.add(result.getDate(3));
+				info.add(result.getString(4));
+				info.add(result.getString(5));
+				info.add(result.getString(6));
+				info.add(result.getString(7));
+				info.add(result.getDouble(8));
 			}
 		}catch(SQLException sqlexc) {
 			System.out.println(sqlexc.getMessage());
 		}
-		return player;
+		return info;
 	}
 	
 	public static void addPlayer(String firstName,String surname,String position,String foot,String market_value,String clubName,String countryName,String dateOfBorn) {
@@ -68,6 +77,27 @@ public class PlayerDao {
 			statement.setInt(11, clubId);
 			int result=statement.executeUpdate();
 			System.out.println("Query executed- created new Player ");
+		}catch(SQLException sqlexc){
+			System.out.println(sqlexc.getMessage());
+		}
+	}
+	public static void updatePlayer(String firstName,String surname,String position,String foot,String market_value,String clubName,String countryName,String dateOfBorn) {
+		try {
+			String query="update football_leagues.player set first_name=?,surname=?,born_date=?,clubID=(select club_id from football_leagues.club where club_name=?),countryID=(select country_id from football_leagues.country where country_name=?),position=?,foot=?,market_value=? where first_name=? and surname=? and position=?;";
+			PreparedStatement statement=connectionWithDateBase.prepareStatement(query);
+			statement.setString(1, firstName);
+			statement.setString(2, surname);
+			statement.setDate(3,  Date.valueOf(dateOfBorn));
+			statement.setString(4, clubName);
+			statement.setString(5, countryName);
+			statement.setString(6, position);
+			statement.setString(7, foot);
+			statement.setDouble(8, Double.parseDouble(market_value));
+			statement.setString(9, firstName);
+			statement.setString(10, surname);
+			statement.setString(11, position);
+			int result=statement.executeUpdate();
+			System.out.println("Query executed- Player updated");
 		}catch(SQLException sqlexc){
 			System.out.println(sqlexc.getMessage());
 		}
@@ -105,5 +135,19 @@ public class PlayerDao {
 			System.out.println(sqlexc.getMessage());
 		}
 		return tab;
+	}
+	
+
+	public static void deletePlayerByName(String first_name,String surname,String position) {
+		try {
+			String query="delete from football_leagues.player where first_name=? and surname=? and position=?;";
+			PreparedStatement statement=connectionWithDateBase.prepareStatement(query);
+			statement.setString(1, first_name);
+			statement.setString(2, surname);
+			statement.setString(3, position);
+			int result=statement.executeUpdate();
+		}catch(SQLException sqlexc) {
+			System.out.println(sqlexc.getMessage());
+		}
 	}
 }

@@ -38,7 +38,7 @@ public class PlayerGui extends JFrame {
 	 */
 	public PlayerGui() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 337);
+		setBounds(100, 100, 450, 286);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -61,7 +61,7 @@ public class PlayerGui extends JFrame {
 			}
 		});
 		addPlayerButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		addPlayerButton.setBounds(46, 218, 355, 23);
+		addPlayerButton.setBounds(46, 180, 355, 23);
 		contentPane.add(addPlayerButton);
 		
 		JButton backbutton = new JButton("Back");
@@ -73,7 +73,7 @@ public class PlayerGui extends JFrame {
 			}
 		});
 		backbutton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		backbutton.setBounds(172, 252, 89, 23);
+		backbutton.setBounds(172, 214, 89, 23);
 		contentPane.add(backbutton);
 		
 		JButton btnPlayersAgeAverage = new JButton("Players age average in club");
@@ -85,7 +85,31 @@ public class PlayerGui extends JFrame {
 			}
 		});
 		btnPlayersAgeAverage.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		btnPlayersAgeAverage.setBounds(46, 108, 355, 23);
+		btnPlayersAgeAverage.setBounds(46, 78, 355, 23);
 		contentPane.add(btnPlayersAgeAverage);
+		
+		JButton deletePlayerButton = new JButton("Delete player");
+		deletePlayerButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				DeletePlayerGui gui=new DeletePlayerGui();
+				gui.setVisible(true);
+			}
+		});
+		deletePlayerButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		deletePlayerButton.setBounds(46, 146, 355, 23);
+		contentPane.add(deletePlayerButton);
+		
+		JButton updatePlayerButton = new JButton("Update player information");
+		updatePlayerButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				UpdatePlayergui gui=new UpdatePlayergui();
+				gui.setVisible(true);
+			}
+		});
+		updatePlayerButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		updatePlayerButton.setBounds(46, 112, 355, 23);
+		contentPane.add(updatePlayerButton);
 	}
 }

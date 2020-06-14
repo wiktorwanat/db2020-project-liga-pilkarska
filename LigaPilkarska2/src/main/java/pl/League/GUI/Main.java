@@ -56,6 +56,7 @@ public class Main extends JFrame {
 		JButton playerButton = new JButton("Players");
 		playerButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 				PlayerGui playerGui=new PlayerGui();
 				playerGui.setVisible(true);
 				
@@ -68,6 +69,7 @@ public class Main extends JFrame {
 		JButton countryButton = new JButton("Country");
 		countryButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 				CountryGui countryGui=new CountryGui();
 				countryGui.setVisible(true);
 			}
@@ -79,6 +81,7 @@ public class Main extends JFrame {
 		JButton leagueButton = new JButton("Leagues");
 		leagueButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 				LeaguesGui leaguesGui=new LeaguesGui();
 				leaguesGui.setVisible(true);
 			}
@@ -90,6 +93,7 @@ public class Main extends JFrame {
 		JButton stadiumButton = new JButton("Stadiums");
 		stadiumButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 				StadiumGui stadiumGui=new StadiumGui();
 				stadiumGui.setVisible(true);
 			}
@@ -101,6 +105,7 @@ public class Main extends JFrame {
 		JButton employeesButton = new JButton("Employees");
 		employeesButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 				EmployeeGui employeeGui=new EmployeeGui();
 				employeeGui.setVisible(true);
 			}
@@ -112,6 +117,7 @@ public class Main extends JFrame {
 		JButton clubButton = new JButton("Clubs");
 		clubButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 				ClubGui clubGui=new ClubGui();
 				clubGui.setVisible(true);
 			}
